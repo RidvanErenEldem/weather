@@ -1,5 +1,10 @@
 const defaultState = {
-  currentWeather: {},
+  currentWeather: {
+    location: {},
+    current: {
+      condition: {},
+    },
+  },
 };
 
 export default defaultState;

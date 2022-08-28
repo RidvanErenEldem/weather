@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
 import * as weatherActions from "../../redux/actions/weatherActions";
 import { connect } from "react-redux";
@@ -8,7 +8,13 @@ class TestWeather extends Component {
     this.props.getCurrentWeather();
   }
   render() {
-    return <div>{console.log(JSON.stringify(this.props.currentWeather))}</div>;
+    return (
+      <div>
+        <img src={"http:" + this.props.currentWeather.current.condition.icon} alt="" />
+        <p>{this.props.currentWeather.location.name + "/" + this.props.currentWeather.location.country} </p>
+        <p>{this.props.currentWeather.current.temp_c + "°C " + this.props.currentWeather.current.condition.text}</p>
+      </div>
+    );
   }
 }
 
