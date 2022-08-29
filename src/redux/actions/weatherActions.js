@@ -27,11 +27,11 @@ export function getCurrentWeatherFail(error) {
 //   };
 // }
 
-export function getCurrentWeather() {
+export function getCurrentWeather(query) {
   return function (dispatch) {
     dispatch(getCurrentWeatherLoading());
     let apiKey = process.env.REACT_APP_KEY;
-    let url = "http://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=Konya&aqi=no";
+    let url = "http://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=" + query + "&aqi=no";
     axios
       .get(url)
       .then((response) => dispatch(getCurrentWeatherSucess(response.data)))
