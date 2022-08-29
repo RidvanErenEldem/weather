@@ -1,10 +1,7 @@
 const defaultState = {
-  currentWeather: {
-    location: {},
-    current: {
-      condition: {},
-    },
-  },
+  loading: true,
+  currentWeather: {},
+  error: "",
 };
 
 export default defaultState;
