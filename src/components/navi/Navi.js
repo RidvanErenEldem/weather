@@ -31,7 +31,6 @@ class Navi extends React.Component {
   }
 
   handleClick() {
-    console.log(this.state.queryString);
     this.props.getWeatherForecast(this.state.queryString);
   }
 
