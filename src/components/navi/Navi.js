@@ -1,8 +1,11 @@
 import React from "react";
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Input, Button } from "reactstrap";
 import { Search } from "react-bootstrap-icons";
+import * as weatherActions from "../../redux/actions/weatherActions";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-export default class Navi extends React.Component {
+class Navi extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -23,8 +26,13 @@ export default class Navi extends React.Component {
     });
   }
 
+  handleKeyDown(event) {
+    if (event.key === "Enter") this.props.getWeatherForecast(this.state.queryString);
+  }
+
   handleClick() {
     console.log(this.state.queryString);
+    this.props.getWeatherForecast(this.state.queryString);
   }
 
   render() {
@@ -35,9 +43,7 @@ export default class Navi extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="col-md-12" navbar>
               <NavItem className="col-md-4">
-                <NavLink href="#" style={{ textAlign: "left" }}>
-                  Weather App By Rıdvan
-                </NavLink>
+                <NavLink style={{ textAlign: "left" }}>Weather App By Rıdvan</NavLink>
               </NavItem>
               <NavItem className="col-md-4">
                 <Input
@@ -46,6 +52,7 @@ export default class Navi extends React.Component {
                   placeholder="Enter a location..."
                   autoFocus
                   onChange={(e) => this.handleChange(e)}
+                  onKeyDown={(e) => this.handleKeyDown(e)}
                 />
               </NavItem>
               <NavItem className="col-md-2">
@@ -65,3 +72,9 @@ export default class Navi extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return { getWeatherForecast: bindActionCreators(weatherActions.getWeatherForecast, dispatch) };
+};
+
+export default connect(null, mapDispatchToProps)(Navi);
