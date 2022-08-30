@@ -17,7 +17,7 @@ export function getWeatherForecast(query) {
   return function (dispatch) {
     dispatch(getWeatherForecastLoading());
     let apiKey = process.env.REACT_APP_KEY;
-    let url = "http://api.weatherapi.com/v1/forecast.json?key=" + apiKey + "&q=" + query + "&aqi=yes&alerts=yes";
+    let url = "http://api.weatherapi.com/v1/forecast.json?key=" + apiKey + "&q=" + query + "&days=2&aqi=yes&alerts=yes";
     axios
       .get(url)
       .then((response) => dispatch(getWeatherForecastSucess(response.data)))
