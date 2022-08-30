@@ -3,21 +3,21 @@ import defaultState from "./initialState";
 
 const weatherReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case actionTypes.GET_CURRENT_WEATHER_LOADING:
+    case actionTypes.GET_WEATHER_FORECAST_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case actionTypes.GET_CURRENT_WEATHER_SUCCESS:
+    case actionTypes.GET_WEATHER_FORECAST_SUCCESS:
       return {
         loading: false,
-        currentWeather: action.payload,
+        weatherForecast: action.payload,
         error: "",
       };
-    case actionTypes.GET_CURRENT_WEATHER_FAIL:
+    case actionTypes.GET_WEATHER_FORECAST_FAIL:
       return {
         loading: false,
-        currentWeather: "",
+        weatherForecast: "",
         error: action.payload,
       };
     default:

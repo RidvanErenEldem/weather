@@ -4,9 +4,10 @@ class TestCompanent extends Component {
   render() {
     return (
       <div>
-        <img src={"http:" + this.props.currentWeather.current.condition.icon} alt="" />
-        <p>{this.props.currentWeather.location.name + "/" + this.props.currentWeather.location.country} </p>
-        <p>{this.props.currentWeather.current.temp_c + "°C " + this.props.currentWeather.current.condition.text}</p>
+        <img src={"http:" + this.props.weatherForecast.current.condition.icon} alt="" />
+        <p>{this.props.weatherForecast.location.name + "/" + this.props.weatherForecast.location.country} </p>
+        <p>{this.props.weatherForecast.current.temp_c + "°C " + this.props.weatherForecast.current.condition.text}</p>
+        {this.props.weatherForecast.forecast.forecastday.forEach((forecast) => console.log(forecast))}
       </div>
     );
   }

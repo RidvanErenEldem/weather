@@ -1,6 +1,6 @@
 const defaultState = {
   loading: true,
-  currentWeather: {},
+  weatherForecast: {},
   error: "",
 };
 

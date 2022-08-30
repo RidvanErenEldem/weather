@@ -7,25 +7,24 @@ import TestCompanent from "./TestCompanent";
 class TestWeather extends Component {
   constructor(props) {
     super(props);
-    this.props.getCurrentWeather("Konya");
+    this.props.getWeatherForecast("Konya");
   }
 
   render() {
     return (
       <div>
-        {console.log(this.props.currentWeather)}
-        {this.props.currentWeather.loading ? "Loading..." : <TestCompanent currentWeather={this.props.currentWeather.currentWeather} />}
+        {this.props.weatherInfo.loading ? "Loading..." : <TestCompanent weatherForecast={this.props.weatherInfo.weatherForecast} />}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  return { currentWeather: state.weatherReducer };
+  return { weatherInfo: state.weatherReducer };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { getCurrentWeather: bindActionCreators(weatherActions.getCurrentWeather, dispatch) };
+  return { getWeatherForecast: bindActionCreators(weatherActions.getWeatherForecast, dispatch) };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TestWeather);

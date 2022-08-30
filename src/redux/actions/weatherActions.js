@@ -1,16 +1,28 @@
 import * as actionTypes from "./actionTypes";
 import axios from "axios";
 
-export function getCurrentWeatherSucess(weather) {
-  return { type: actionTypes.GET_CURRENT_WEATHER_SUCCESS, payload: weather };
+export function getWeatherForecastSucess(weather) {
+  return { type: actionTypes.GET_WEATHER_FORECAST_SUCCESS, payload: weather };
 }
 
-export function getCurrentWeatherLoading() {
-  return { type: actionTypes.GET_CURRENT_WEATHER_LOADING };
+export function getWeatherForecastLoading() {
+  return { type: actionTypes.GET_WEATHER_FORECAST_LOADING };
 }
 
-export function getCurrentWeatherFail(error) {
-  return { type: actionTypes.GET_CURRENT_WEATHER_FAIL, payload: error };
+export function getWeatherForecastFail(error) {
+  return { type: actionTypes.GET_WEATHER_FORECAST_FAIL, payload: error };
+}
+
+export function getWeatherForecast(query) {
+  return function (dispatch) {
+    dispatch(getWeatherForecastLoading());
+    let apiKey = process.env.REACT_APP_KEY;
+    let url = "http://api.weatherapi.com/v1/forecast.json?key=" + apiKey + "&q=" + query + "&aqi=yes&alerts=yes";
+    axios
+      .get(url)
+      .then((response) => dispatch(getWeatherForecastSucess(response.data)))
+      .catch((error) => dispatch(getWeatherForecastFail(error.message)));
+  };
 }
 
 // export function getCurrentWeather() {
@@ -26,15 +38,3 @@ export function getCurrentWeatherFail(error) {
 //       });
 //   };
 // }
-
-export function getCurrentWeather(query) {
-  return function (dispatch) {
-    dispatch(getCurrentWeatherLoading());
-    let apiKey = process.env.REACT_APP_KEY;
-    let url = "http://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=" + query + "&aqi=no";
-    axios
-      .get(url)
-      .then((response) => dispatch(getCurrentWeatherSucess(response.data)))
-      .catch((error) => dispatch(getCurrentWeatherFail(error.message)));
-  };
-}
