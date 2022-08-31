@@ -43,7 +43,11 @@ class WeatherByDay extends Component {
           {this.props.weatherInfo.weatherForecast.forecast.forecastday.map((forecast, index) => (
             <ListGroupItem key={index} active={index === this.state.selectedDay ? true : false} onClick={(e) => this.onClick(index)}>
               <ListGroup flush>
-                <ListGroupItem active={index === this.state.selectedDay ? true : false} onClick={(e) => this.onClick(index)}>
+                <ListGroupItem
+                  style={{ border: "none" }}
+                  active={index === this.state.selectedDay ? true : false}
+                  onClick={(e) => this.onClick(index)}
+                >
                   <img src={"http:" + forecast.day.condition.icon} alt="" />
                   {forecast.day.condition.text} {forecast.day.maxtemp_c + "°C /"} {forecast.day.mintemp_c + "°C"}
                 </ListGroupItem>
