@@ -22,7 +22,7 @@ class HourlyWeather extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.weatherInfo.weatherForecast.forecast.forecastday[0].hour.map((hourly, index) => (
+          {this.props.weatherInfo.weatherForecast.forecast.forecastday[this.props.selectedDayInfo.selectedDay].hour.map((hourly, index) => (
             <tr key={index}>
               <td>{hourly.time.slice(-5)}</td>
               <td>{hourly.temp_c}</td>
@@ -51,7 +51,7 @@ class HourlyWeather extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { weatherInfo: state.weatherReducer };
+  return { weatherInfo: state.weatherReducer, selectedDayInfo: state.whichDayReducer };
 };
 
 export default connect(mapStateToProps)(HourlyWeather);
