@@ -13,7 +13,13 @@ class TestWeather extends Component {
   render() {
     return (
       <div>
-        {this.props.weatherInfo.loading ? "Loading..." : <TestCompanent weatherForecast={this.props.weatherInfo.weatherForecast} />}
+        {this.props.weatherInfo.loading ? (
+          "Loading..."
+        ) : this.props.weatherInfo.error ? (
+          "Error: " + this.props.weatherInfo.error
+        ) : (
+          <TestCompanent weatherForecast={this.props.weatherInfo.weatherForecast} />
+        )}
       </div>
     );
   }

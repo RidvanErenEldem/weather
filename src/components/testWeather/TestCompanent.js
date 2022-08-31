@@ -1,12 +1,26 @@
 import React, { Component } from "react";
+import { Container, Col, Row } from "reactstrap";
+import CurrentWeather from "../currentWeather/CurrentWeather";
+import HourlyWeather from "../hourlyWeather/HourlyWeather";
+import WeatherByDay from "../weatherByDay/WeatherByDay";
 
 class TestCompanent extends Component {
   render() {
     return (
       <div>
-        <img src={"http:" + this.props.weatherForecast.current.condition.icon} alt="" />
-        <p>{this.props.weatherForecast.location.name + "/" + this.props.weatherForecast.location.country} </p>
-        <p>{this.props.weatherForecast.current.temp_c + "°C " + this.props.weatherForecast.current.condition.text}</p>
+        <Container fluid>
+          <Row>
+            <Col xs="4">
+              <CurrentWeather />
+            </Col>
+            <Col xs="8">
+              <WeatherByDay />
+            </Col>
+          </Row>
+          <Row>
+            <HourlyWeather />
+          </Row>
+        </Container>
       </div>
     );
   }
