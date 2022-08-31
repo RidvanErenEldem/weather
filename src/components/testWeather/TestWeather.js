@@ -7,7 +7,12 @@ import TestCompanent from "./TestCompanent";
 class TestWeather extends Component {
   constructor(props) {
     super(props);
-    this.props.getWeatherForecast("Konya");
+    navigator.geolocation.getCurrentPosition((position) => {
+      let latitude = position.coords.latitude;
+      let longitude = position.coords.longitude;
+      let currentPosition = latitude + "," + longitude;
+      this.props.getWeatherForecast(currentPosition);
+    });
   }
 
   render() {
