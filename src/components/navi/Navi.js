@@ -4,6 +4,7 @@ import { Search } from "react-bootstrap-icons";
 import * as weatherActions from "../../redux/actions/weatherActions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import * as whichDayAction from "../../redux/actions/whichDayAction";
 
 class Navi extends React.Component {
   constructor(props) {
@@ -27,11 +28,15 @@ class Navi extends React.Component {
   }
 
   handleKeyDown(event) {
-    if (event.key === "Enter") this.props.getWeatherForecast(this.state.queryString);
+    if (event.key === "Enter") {
+      this.props.getWeatherForecast(this.state.queryString);
+      this.props.changeSelectedDate(0);
+    }
   }
 
   handleClick() {
     this.props.getWeatherForecast(this.state.queryString);
+    this.props.changeSelectedDate(0);
   }
 
   render() {
@@ -73,7 +78,10 @@ class Navi extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { getWeatherForecast: bindActionCreators(weatherActions.getWeatherForecast, dispatch) };
+  return {
+    getWeatherForecast: bindActionCreators(weatherActions.getWeatherForecast, dispatch),
+    changeSelectedDate: bindActionCreators(whichDayAction.changeSelectedDate, dispatch),
+  };
 };
 
 export default connect(null, mapDispatchToProps)(Navi);
