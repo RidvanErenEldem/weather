@@ -1,12 +1,12 @@
 import React from "react";
-import TestWeather from "../testWeather/TestWeather";
+import PreLoadWeather from "../mainWeather/PreLoadWeather";
 import Navi from "../navi/Navi";
 
 function App() {
   return (
     <div>
       <Navi></Navi>
-      <TestWeather />
+      <PreLoadWeather />
     </div>
   );
 }

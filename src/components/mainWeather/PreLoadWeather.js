@@ -3,7 +3,7 @@ import { bindActionCreators } from "redux";
 import * as weatherActions from "../../redux/actions/weatherActions";
 import * as whichDayAction from "../../redux/actions/whichDayAction";
 import { connect } from "react-redux";
-import TestCompanent from "./TestCompanent";
+import MainWeatherCompanent from "./MainWeatherCompanent";
 
 class TestWeather extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class TestWeather extends Component {
         ) : this.props.weatherInfo.error ? (
           "Error: " + this.props.weatherInfo.error
         ) : (
-          <TestCompanent weatherForecast={this.props.weatherInfo.weatherForecast} />
+          <MainWeatherCompanent weatherForecast={this.props.weatherInfo.weatherForecast} />
         )}
       </div>
     );
