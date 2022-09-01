@@ -6,7 +6,8 @@ This is a simple weather app that uses ReactJS, Redux, React Strap, Axios and Re
 
 ![demo](https://user-images.githubusercontent.com/62355565/187891976-27bb89b7-8fce-44cc-a66f-c2376b71ea39.gif)
 
-## Warning:
+## Warning
+
 > ⚠️ Because of how the application handles api key the application is not suited for any kind of deployment. It's only made for educational purposes. Don't deploy it or your api key will be exposed  to others.
 
 ## How to use
