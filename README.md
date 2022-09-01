@@ -1,6 +1,6 @@
 # Weather App With ReactJS and Redux
 
-This is a simple weather app that uses ReactJS, Redux, React Strap, Axios and React-Bootstrap icons with api from weatherapi.com
+This is a simple weather app that uses ReactJS, Redux, React Strap, Axios and React-Bootstrap icons with an api from weatherapi.com
 
 ## Live Demo
 
