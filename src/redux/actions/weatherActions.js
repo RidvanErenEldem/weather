@@ -16,10 +16,13 @@ export function getWeatherForecastFail(error) {
 export function getWeatherForecast(query) {
   return function (dispatch) {
     dispatch(getWeatherForecastLoading());
-    let apiKey = process.env.REACT_APP_KEY;
-    let url = "http://api.weatherapi.com/v1/forecast.json?key=" + apiKey + "&q=" + query + "&days=4&aqi=yes&alerts=yes";
+    const options = {
+      method: "GET",
+      url: "http://localhost:8000/weather",
+      params: { location: query },
+    };
     axios
-      .get(url)
+      .request(options)
       .then((response) => dispatch(getWeatherForecastSucess(response.data)))
       .catch((error) => dispatch(getWeatherForecastFail(error.message)));
   };
