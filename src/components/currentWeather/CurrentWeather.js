@@ -5,10 +5,10 @@ import { ArrowUp } from "react-bootstrap-icons";
 class CurrentWeather extends Component {
   uvColor(value) {
     if (value <= 2) return { color: "#45a635" };
-    else if (value > 2 && value <= 5) return { color: "#f5eb10" };
-    else if (value > 5 && value <= 7) return { color: "#ed8a08" };
-    else if (value > 7 && value <= 10) return { color: "#dc3e23" };
-    else return { color: "#b578b3" };
+    if (value > 2 && value <= 5) return { color: "#f5eb10" };
+    if (value > 5 && value <= 7) return { color: "#ed8a08" };
+    if (value > 7 && value <= 10) return { color: "#dc3e23" };
+    return { color: "#b578b3" };
   }
 
   render() {
