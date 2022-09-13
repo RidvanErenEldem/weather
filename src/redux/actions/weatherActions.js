@@ -18,7 +18,7 @@ export function getWeatherForecast(query) {
     dispatch(getWeatherForecastLoading());
     const options = {
       method: "GET",
-      url: "http://localhost:8000/weather",
+      url: "https://weather-express420.herokuapp.com/weather",
       params: { location: query },
     };
     axios
