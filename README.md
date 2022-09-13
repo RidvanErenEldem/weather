@@ -8,6 +8,8 @@ This is a simple weather app that uses ReactJS, Redux, React Strap, Axios and Re
 
 ![demo](https://user-images.githubusercontent.com/62355565/187891976-27bb89b7-8fce-44cc-a66f-c2376b71ea39.gif)
 
+### [Access Live Demo Here !](https://weather-app-by-ridvan.netlify.app/))
+
 ## How to use
 
 First of all, you need to create a api key for your application from weatherapi.com after that create a file named ".env" in your root directory and add it to your api key like so:
