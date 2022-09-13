@@ -16,7 +16,7 @@ class CurrentWeather extends Component {
       <div>
         <ListGroup horizontal>
           <ListGroupItem style={{ border: "none" }}>
-            <img src={"http:" + this.props.weatherInfo.weatherForecast.current.condition.icon} alt="" />
+            <img src={"https:" + this.props.weatherInfo.weatherForecast.current.condition.icon} alt="" />
             <p>
               {this.props.weatherInfo.weatherForecast.current.temp_c +
                 "°C " +

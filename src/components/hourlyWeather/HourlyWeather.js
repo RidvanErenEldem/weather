@@ -28,7 +28,7 @@ class HourlyWeather extends Component {
               <td>{hourly.temp_c}</td>
               <td>
                 {hourly.condition.text}
-                <img src={"http:" + hourly.condition.icon} alt="" />
+                <img src={"https:" + hourly.condition.icon} alt="" />
               </td>
               <td>{hourly.wind_kph}</td>
               <td>
