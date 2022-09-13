@@ -48,7 +48,7 @@ class WeatherByDay extends Component {
                   active={index === this.state.selectedDay ? true : false}
                   onClick={(e) => this.onClick(index)}
                 >
-                  <img src={"s:" + forecast.day.condition.icon} alt="" />
+                  <img src={"htpps:" + forecast.day.condition.icon} alt="" />
                   {forecast.day.condition.text} {forecast.day.maxtemp_c + "°C /"} {forecast.day.mintemp_c + "°C"}
                 </ListGroupItem>
                 <ListGroupItem
