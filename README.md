@@ -1,6 +1,7 @@
 # Weather App With ReactJS and Redux
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f4954ad7-8ef8-4916-a18e-535c14ba07f5/deploy-status)](https://app.netlify.com/sites/weather-app-by-ridvan/deploys) [![HitCount](https://hits.dwyl.com/RıdvanErenEldem/weather.svg?style=flat-square)](http://hits.dwyl.com/RıdvanErenEldem/weather)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f4954ad7-8ef8-4916-a18e-535c14ba07f5/deploy-status)](https://app.netlify.com/sites/weather-app-by-ridvan/deploys) [![HitCount](https://hits.dwyl.com/RidvanErenEldem/weather.svg?style=flat-square)](http://hits.dwyl.com/RidvanErenEldem/weather)
+
 
 
 This is a simple weather app that uses ReactJS, Redux, React Strap, Axios and React-Bootstrap icons with an api from weatherapi.com
