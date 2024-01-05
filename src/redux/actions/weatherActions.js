@@ -18,7 +18,7 @@ export function getWeatherForecast(query) {
     dispatch(getWeatherForecastLoading());
     const options = {
       method: "GET",
-      url: "https://167.99.244.116:5000/weather",
+      url: "https://ridvanereneldem.software:5000/weather",
       params: { location: query },
     };
     axios
